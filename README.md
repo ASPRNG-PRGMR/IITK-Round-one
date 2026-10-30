@@ -5,8 +5,34 @@ directory with its own README, code and deliverables.
 
 | | problem | status |
 | --- | --- | --- |
-| [`PS-1/`](PS-1/) | Problem statement 1 | — |
+| [`PS-1/`](PS-1/) | **Backdoor detection from hardware performance counters** | complete |
 | [`PS-2/`](PS-2/) | **Black-box adversarial attack on a CNN** | complete |
+
+## PS-1 — Backdoor detection from hardware performance counters
+
+A one-class detector for backdoor-triggered inferences. The training data is
+800 HPC traces (cache-references, cycles, LLC-loads) from clean inferences
+only, so the detector learns what clean traces look like and flags the ones
+that don't fit. It is a three-component Gaussian mixture on the standardised
+counters, scored by negative log-density, with the threshold set on held-out
+clean traces.
+
+| | |
+| --- | --- |
+| **Model** | Gaussian mixture, 3 components, full covariance |
+| **Threshold** | 4.664, calibrated to a **10 %** clean false-positive rate |
+| Clean FPR on held-out traces | 0.049 at a 0.05 target (20 random splits) |
+| **AUROC, real backdoor traces** | **0.865** (z-score, Mahalanobis, PCA, one-class SVM: 0.46 to 0.52) |
+| AUROC, synthetic counter shifts | 0.858 mean, 0.767 for the hardest direction |
+| Training traces removed | none |
+
+The training set has no backdoor traces, so the hidden test score can't be
+measured locally. The real-backdoor AUROC comes from the public traces of
+Alam et al. (DATE 2024), which use different counters and hardware, and is
+there to compare methods. See [`PS-1/README.md`](PS-1/README.md) for usage and
+[`PS-1/reports/report.pdf`](PS-1/reports/report.pdf) for the written report.
+
+![PS-1 clean traces and decision boundary](PS-1/reports/figures/fig_data.png)
 
 ## PS-2 — Black-box adversarial attack on a CNN
 
