@@ -1,0 +1,9 @@
+.cache/
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+predictions.csv
+
+# organiser-provided input (kept out of git like PS-2's data; place it in data/ yourself)
+data/trace.csv

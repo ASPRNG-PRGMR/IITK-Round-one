@@ -1,0 +1,41 @@
+{
+  "package_version": "0.1.0",
+  "features": [
+    "cache-references",
+    "cycles",
+    "LLC-loads"
+  ],
+  "config": {
+    "representation": "raw",
+    "ratios": [],
+    "scorer": "mgmm",
+    "scorer_params": {
+      "k": 3,
+      "covariance_type": "full",
+      "reg_covar": 1e-06,
+      "n_init": 10
+    },
+    "alpha": 0.1,
+    "n_folds": 10,
+    "seed": 0
+  },
+  "threshold": 4.664117566142252,
+  "n_train": 800,
+  "train_sha256_16": "b22def93b1b5880d",
+  "scorer_diagnostics": {
+    "bic": 4648.854250747148,
+    "occupancy": [
+      22,
+      219,
+      559
+    ],
+    "weights": [
+      0.0432,
+      0.2714,
+      0.6854
+    ],
+    "converged": true
+  },
+  "sklearn_version": "1.9.1",
+  "python_version": "3.13.17"
+}

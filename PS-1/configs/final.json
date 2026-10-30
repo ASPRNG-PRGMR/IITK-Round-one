@@ -1,0 +1,9 @@
+{
+  "representation": "raw",
+  "ratios": [],
+  "scorer": "mgmm",
+  "scorer_params": {"k": 3, "covariance_type": "full", "reg_covar": 1e-06, "n_init": 10},
+  "alpha": 0.10,
+  "n_folds": 10,
+  "seed": 0
+}
